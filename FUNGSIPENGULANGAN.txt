@@ -1,0 +1,14 @@
+switch (reset)
+	{ case 'Y' : 
+	cout << goto main() << endl;
+	break;
+	case 'y' :
+		cout << goto main () << endl;
+	break;
+	case 'N' : 
+		cout << "OKE TERIMAKASIH" << endl;
+		break;
+	case 'n' : 
+		cout << "OKE TERIMAKASIH" << endl;
+		break;
+	default : cout << "FORMAT YANG DIMASUKKAN SALAH" << endl;

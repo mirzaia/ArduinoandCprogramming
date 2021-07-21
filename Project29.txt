@@ -1,0 +1,383 @@
+#pragma once
+
+namespace Project29 {
+
+	using namespace System;
+	using namespace System::ComponentModel;
+	using namespace System::Collections;
+	using namespace System::Windows::Forms;
+	using namespace System::Data;
+	using namespace System::Drawing;
+	using namespace System::IO;
+	using namespace MySql::Data::MySqlClient;
+	/// <summary>
+	/// Summary for MyForm
+	/// </summary>
+	public ref class MyForm : public System::Windows::Forms::Form
+	{
+	public:
+		MyForm(void)
+		{
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
+
+	protected:
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		~MyForm()
+		{
+			if (components)
+			{
+				delete components;
+			}
+		}
+
+	protected: 
+	private: System::Windows::Forms::Label^  label1;
+
+
+	private: System::Windows::Forms::Label^  label3;
+
+
+	private: System::Windows::Forms::Button^  button2;
+	private: System::Windows::Forms::Button^  button3;
+	private: System::Windows::Forms::Button^  button4;
+	private: System::Windows::Forms::TextBox^  textBox1;
+
+	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::ComboBox^  comboBox1;
+
+
+
+	private: System::Windows::Forms::Label^  label2;
+	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::Button^  button5;
+	private: System::Windows::Forms::Button^  button6;
+	private: System::Windows::Forms::DataGridView^  dataGridView1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	private:
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		System::ComponentModel::Container ^components;
+
+#pragma region Windows Form Designer generated code
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		void InitializeComponent(void)
+		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView1))->BeginInit();
+			this->SuspendLayout();
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Exotc350 Bd BT", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(32, 20);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(433, 38);
+			this->label1->TabIndex = 1;
+			this->label1->Text = L"DATA MAINTENANCE MESIN";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Exotc350 DmBd BT", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(32, 78);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(145, 25);
+			this->label3->TabIndex = 4;
+			this->label3->Text = L"KODE BARANG";
+			// 
+			// button2
+			// 
+			this->button2->Font = (gcnew System::Drawing::Font(L"Exotc350 DmBd BT", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->button2->Location = System::Drawing::Point(87, 348);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(151, 27);
+			this->button2->TabIndex = 7;
+			this->button2->Text = L"HAPUS DATA";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
+			// 
+			// button3
+			// 
+			this->button3->Font = (gcnew System::Drawing::Font(L"Exotc350 DmBd BT", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->button3->Location = System::Drawing::Point(264, 348);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(151, 27);
+			this->button3->TabIndex = 8;
+			this->button3->Text = L"PERBAHARUI DATA";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
+			// 
+			// button4
+			// 
+			this->button4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button4.BackgroundImage")));
+			this->button4->Location = System::Drawing::Point(339, 212);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(145, 116);
+			this->button4->TabIndex = 9;
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
+			this->button4->MouseCaptureChanged += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
+			// 
+			// textBox1
+			// 
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Exotc350 DmBd BT", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->textBox1->Location = System::Drawing::Point(209, 78);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(135, 32);
+			this->textBox1->TabIndex = 10;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Exotc350 DmBd BT", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label5->Location = System::Drawing::Point(32, 121);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(171, 25);
+			this->label5->TabIndex = 12;
+			this->label5->Text = L"KONDISI BARANG";
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Exotc350 DmBd BT", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) {L"BELUM MAINTENANCE", L"SUDAH MAINTENANCE"});
+			this->comboBox1->Location = System::Drawing::Point(212, 121);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(203, 33);
+			this->comboBox1->TabIndex = 25;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Exotc350 DmBd BT", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(34, 180);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(142, 25);
+			this->label2->TabIndex = 21;
+			this->label2->Text = L"JENIS BARANG";
+			// 
+			// button1
+			// 
+			this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button1.BackgroundImage")));
+			this->button1->Location = System::Drawing::Point(37, 212);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(145, 116);
+			this->button1->TabIndex = 22;
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			// 
+			// button5
+			// 
+			this->button5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button5.BackgroundImage")));
+			this->button5->Location = System::Drawing::Point(188, 211);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(145, 116);
+			this->button5->TabIndex = 23;
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(530, 303);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(122, 23);
+			this->button6->TabIndex = 26;
+			this->button6->Text = L"button6";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(480, 42);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->Size = System::Drawing::Size(240, 150);
+			this->dataGridView1->TabIndex = 27;
+			// 
+			// MyForm
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::SystemColors::Window;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(732, 398);
+			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->button6);
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->comboBox1);
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->button4);
+			this->Controls->Add(this->button3);
+			this->Controls->Add(this->button2);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label1);
+			this->Location = System::Drawing::Point(100, 100);
+			this->Name = L"MyForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"MyForm";
+			this->WindowState = System::Windows::Forms::FormWindowState::Minimized;
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView1))->EndInit();
+			this->ResumeLayout(false);
+			this->PerformLayout();
+
+		}
+#pragma endregion
+		String^ conStr;
+		MySqlConnection^ sqlConn;
+		private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
+					 	  conStr = L"server=127.0.0.1;"
+				 + "uid=root;"
+				 + "pwd=;"
+				 + "database=tk;";
+			 try{
+				 sqlConn = gcnew MySqlConnection(conStr);
+				 sqlConn->Open();
+				 MessageBox::Show("CONNECTED");
+			 }
+			 catch (Exception^err){
+				 MessageBox::Show(err->Message);
+			 }
+		 }
+				
+private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
+			  MySqlCommand^ SqlComm;
+			  String^ commString = "INSERT INTO `data_main` (`TANGGAL INPUT`,`KODE BARANG`,`JENIS BARANG`, `KONDISI BARANG`)VALUES (NOW(),'" + textBox1->Text + "','Mesin Pesawat','" + comboBox1->SelectedItem->ToString() + "');";
+			 try {
+				 SqlComm = gcnew MySqlCommand(commString, sqlConn);
+				 SqlComm->ExecuteNonQuery();
+				 MessageBox::Show("DATA BERHASIL DIMASUKKAN!");
+			 }
+			 catch (Exception^err){
+				 MessageBox::Show(err->Message);
+}
+
+		 }
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+
+			  MySqlCommand^ SqlComm;
+			 String^ commString = "DELETE FROM `data_main` WHERE `KODE BARANG`='" + textBox1->Text + "' && `KONDISI BARANG` = 'SUDAH MAINTENANCE'";
+			 try {
+				 SqlComm = gcnew MySqlCommand(commString, sqlConn);
+				 SqlComm->ExecuteNonQuery();
+				 MessageBox::Show("DATA BERHASIL DIHAPUS");
+			 }
+			 catch (Exception^err){
+				 MessageBox::Show(err->Message);
+			 }
+
+		 }
+private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+			  MySqlCommand^ SqlComm;
+			  String^ commString = "UPDATE `data_main` SET `KONDISI BARANG`='"+ comboBox1->SelectedItem->ToString() +"' WHERE `KODE BARANG`='"+ textBox1->Text + "'"; //* Kendala 
+			 try {
+				 SqlComm = gcnew MySqlCommand(commString, sqlConn);
+				 SqlComm->ExecuteNonQuery();
+				 MessageBox::Show("DATA BERHASIL DIPERBAHARUI");
+			 }
+
+			/* MySqlCommand^ SqlComm;
+			 String^ commString = "UPDATE `data_main` SET `KODE BARANG`='"+textBox1->Text+"' WHERE `KONDISI BARANG`='"+ textBox2->Text + "';";
+			 try {
+				SqlComm = gcnew MySqlCommand(commString, sqlConn);
+				SqlComm->ExecuteNonQuery();
+				MessageBox::Show("DATA BERHASIL DIPERBAHARUI");
+			 }*/
+			 catch (Exception^err){
+				 MessageBox::Show(err->Message);
+			 }
+		 }
+private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
+			 			  MySqlCommand^ SqlComm;
+						  String^ commString = "INSERT INTO `data_main` (`TANGGAL INPUT`,`KODE BARANG`,`JENIS BARANG`, `KONDISI BARANG`)VALUES (NOW(),'" + textBox1->Text + "','Mesin Motor','" + comboBox1->SelectedItem->ToString() + "');";
+			 try {
+				 SqlComm = gcnew MySqlCommand(commString, sqlConn);
+				 SqlComm->ExecuteNonQuery();
+				 MessageBox::Show("DATA BERHASIL DIMASUKKAN!");
+			 }
+			 catch (Exception^err){
+				 MessageBox::Show(err->Message);
+}
+
+		 }
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+			 			  MySqlCommand^ SqlComm;
+						  String^ commString = "INSERT INTO `data_main` (`TANGGAL INPUT`,`KODE BARANG`,`JENIS BARANG`, `KONDISI BARANG`)VALUES (NOW(),'" + textBox1->Text + "','Mesin Mobil','" + comboBox1->SelectedItem->ToString() + "');";
+			 try {
+				 SqlComm = gcnew MySqlCommand(commString, sqlConn);
+				 SqlComm->ExecuteNonQuery();
+				 MessageBox::Show("DATA BERHASIL DIMASUKKAN!");
+			 }
+			 catch (Exception^err){
+				 MessageBox::Show(err->Message);
+}
+
+		 }
+//private: System::Void comboBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+//		 }
+private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
+			 MySqlCommand^ sqlComm;
+			 String^ commString = "SELECT * FROM `data_main` ORDER BY `KODE BARANG`";
+			 sqlComm = gcnew MySqlCommand(commString, sqlConn);
+			 try {
+				 MySqlDataAdapter^ tes = gcnew MySqlDataAdapter();
+				 tes->SelectCommand = sqlComm;
+				 DataTable^ data = gcnew DataTable();
+				 tes->Fill(data);
+				 BindingSource^ bsource = gcnew BindingSource;
+				 bsource->DataSource = data;
+				 dataGridView1->DataSource = bsource;
+				 tes->Update(data);
+			 }
+			 catch(Exception^ err) {
+				 MessageBox::Show(err->Message);}
+		 }
+};
+}

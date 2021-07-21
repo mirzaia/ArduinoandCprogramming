@@ -1,0 +1,9 @@
+#pragma endregion
+		static int i = 1;
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+				 i++;
+					 label1->Text = i.ToString();
+				 MessageBox::Show("label1 bertambah satu angka menjadi " + i.ToString());
+			 }
+	};
+}

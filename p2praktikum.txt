@@ -1,0 +1,26 @@
+#pragma endregion
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+				 comboBox1->Items->Add(textBox1->Text);
+			 }
+
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+			 if (comboBox1->SelectedItem->ToString() == "BERLIN"){
+				 label2->Text = "IBUKOTA JERMAN" ;
+			 }
+			 else if (comboBox1->SelectedItem->ToString() == "JAKARTA"){
+				 label2->Text = "IBUKOTA INDONESIA" ;
+			 }
+			 else if (comboBox1->SelectedItem->ToString() == "TOKYO"){
+				 label2->Text = "IBUKOTA JEPANG" ;
+			 }
+			 else {
+				 MessageBox::Show("TIDAK TERDAFTAR");
+			 }
+
+		 }
+private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+			 MessageBox::Show("TERIMAKASIH");
+			 Application::Exit();
+		 }
+};
+}
